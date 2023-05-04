@@ -1,0 +1,166 @@
+.header_top_cont {
+    height: 100px;
+    width: 1170px;
+    z-index: 4;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+    margin: 40px 0px 50px 0px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 10px;
+    left: 400px;
+
+    .header_left_cont {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0px 0px 0px 35px;
+    
+        .header_ds_logo {
+            height: 52.62795639038086px;
+            width: 51.77054977416992px;            
+        }
+    
+        .header_ds_name {
+            color: #2B2B2B;  
+            font-size: 30px;
+            font-weight: 600;
+            padding: 0px 25px 0px 5px;    
+        }
+    
+        .header_dropdown_cont {
+            width: 271px;
+            height: 50px;
+            background: linear-gradient(238.66deg, #0283E9 -18.13%, #FC01CA 120.27%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+    
+            #header_fill_icon {
+                height: 24px;
+                width: 24px;
+                margin: 0px 0px 0px 15px;
+            }
+        
+            .header_category_name {
+                width: 100px;
+                height: 30px;
+                font-family: 'Josefin Sans';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 30px;
+                color: #FFFFFF;
+                margin: 0px 73px 0px 20px;
+            }
+        
+            #header_arrow_icon {
+                height: 24px;
+                width: 24px;
+                cursor: pointer;
+                position: relative;
+            }
+        }
+    }
+
+    .header_options_cont {
+        width: 170px;
+        height: 170px;
+        position: absolute;
+        top: 55px;
+        left: 463px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0px 15px 0px 15px;
+        background: linear-gradient(238.66deg, #0283E9 -18.13%, #FC01CA 120.27%);
+        border-radius: 5px;
+        
+        .header_options_sub {
+            font-family: 'Josefin Sans';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 30px;
+            color: #FFFFFF;
+        }
+
+        .header_options_sub_link {
+            text-decoration: none;
+            border-bottom: 1px solid #FFF ;
+        }
+
+        .header_options_sub_link:last-child {
+            border-bottom: none;
+        }        
+    }
+   
+    .header_right_cont {
+        display: flex;
+        align-items: center;
+    
+        .header_wishlist_cont {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(238.66deg, #0283E9 -18.13%, #FC01CA 120.27%);
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            #header_like_icon{
+                height: 32px;
+                width: 32px;
+            }
+        }
+    
+        .header_card_cont {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(238.66deg, #0283E9 -18.13%, #FC01CA 120.27%);
+            border-radius: 5px;
+            margin: 0px 25px 0px 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            #header_card_icon {
+                height: 32px;
+                width: 32px;
+            }
+        }
+
+        .header_login_button {
+            text-decoration: none;
+
+            .header_sign_in_cont {
+                width: 137px;
+                height: 50px;
+                background: linear-gradient(238.66deg, #0283E9 -18.13%, #FC01CA 120.27%);
+                border-radius: 5px;
+                margin: 0px 30px 0px 0px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        
+                #header_account_icon {
+                    height: 32px;
+                    width: 32px;
+                }
+        
+                .header_sign_in_name {
+                    width: 65px;
+                    height: 30px;
+                    font-family: 'Josefin Sans';
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #FFFFFF;
+                }
+            }
+        }    
+    }
+}
