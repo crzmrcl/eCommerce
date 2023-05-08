@@ -7,7 +7,37 @@ import { VscEyeClosed } from 'react-icons/vsc';
 
 function LoginPage() {
 
-    window.alert('This page is ogoing development. Click LOGIN buton to continue.');
+    const credentialsArray = [
+        {
+            id: 1,
+            email: 'John',
+            password: 'one1'
+        },
+        {
+            id: 2,
+            email: 'Lily',
+            password: 'two2'
+        },
+        {
+            id: 3,
+            email: 'Jane',
+            password: 'three3'
+        },
+        {
+            id: 4,
+            email: 'Lester',
+            password: 'four4'
+        },
+        {
+            id: 5,
+            email: 'Mark',
+            password: 'five5'
+        },
+    ]
+
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ loggedIn, setLoggedIn ] = useState(false);
 
     const [ showPassword, setShowPassword ] = useState(0);
 
@@ -24,11 +54,18 @@ function LoginPage() {
     }
 
     const handleLogin = () => {
-        localStorage.setItem('firstName', 'Sign In');
+        credentialsArray.filter((item) => {
+        
+        if (item.email === email && item.password === password) {
+            setLoggedIn(true);
+            localStorage.setItem('email', email);
+        } 
+        }) 
     }
                 
     useEffect(() => {
         handleShowHidePassword();
+        handleLogin();
     }, []);
 
     return (
@@ -60,11 +97,11 @@ function LoginPage() {
                     <div className='login_left_email_pw_cont'>
                         <div className='login_left_email_label'> Email </div>
                         <div className='login_left_email_cont'>
-                            <input type='text' className='login_left_email_input'></input>
+                            <input type='text' className='login_left_email_input' onChange={e => setEmail(e.target.value) } />
                         </div>
                         <div className='login_left_pw_label'> Password </div>
                         <div className='login_left_pw_cont'>
-                            <input type='password' className='login_left_pw_input'></input>
+                            <input type='password' className='login_left_pw_input' onChange={e => setPassword(e.target.value) } />
                             {/* <div className='login_left_eye' onClick={() => { showPassword ? setShowPassword(true) : setShowPassword(false) }}> */}
                                 {
                                     showPassword ? 
@@ -81,11 +118,17 @@ function LoginPage() {
                     </div>
                     <div className='login_left_forgot_cont'>
                         <div className='login_left_forgot'> Forgot your password ? </div>
-                        <Link to='/' className='login_left_login_btn_link'>
+                        {
+                            loggedIn ? 
+                            <Link to='/' className='login_left_login_btn_link'>
+                                <div className='login_left_login_btn' onClick={() => {handleLogin()}}>
+                                    <span> LOGIN </span>
+                                </div>
+                            </Link> :
                             <div className='login_left_login_btn' onClick={() => {handleLogin()}}>
                                 <span> LOGIN </span>
-                            </div>
-                        </Link>
+                            </div>                            
+                        }
                     </div>
                 </div>
             </div>

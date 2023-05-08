@@ -21,7 +21,7 @@ function Header() {
     const [ firstName, setFirstName ] = useState('');
 
     useEffect(() => {
-        setFirstName(localStorage.getItem('firstName'));
+        setFirstName(localStorage.getItem('email'));
     }, []);
 
     return (
