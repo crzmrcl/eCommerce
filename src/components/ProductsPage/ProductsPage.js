@@ -45,12 +45,12 @@ function ProductsPage() {
 
     const [ productListData, setProductListData ] = useState([]);
 
-    const fetchProductList = async() => {
-        const data = await fetch('../../../db.json').then( res => res.json());
-        setProductListData(data.allProducts[tabMenu].data)
-    }
-
     useEffect (() => {
+        const fetchProductList = async() => {
+            const data = await fetch('../../../db.json').then( res => res.json());
+            setProductListData(data.allProducts[tabMenu].data)
+        }
+
         handleClickTabMenu();
         fetchProductList();
     }, [tabMenu]);

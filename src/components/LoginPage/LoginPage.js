@@ -1,5 +1,5 @@
 import './LoginPage.scss'
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 import { VscEye } from 'react-icons/vsc';
@@ -59,14 +59,15 @@ function LoginPage() {
         if (item.email === email && item.password === password) {
             setLoggedIn(true);
             localStorage.setItem('email', email);
-        } 
+        }
+        return null; 
         }) 
     }
-                
-    useEffect(() => {
-        handleShowHidePassword();
-        handleLogin();
-    }, []);
+
+    // useEffect(() => {
+    //     handleShowHidePassword();
+    //     handleLogin();
+    // }, []);
 
     return (
         <>

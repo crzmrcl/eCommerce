@@ -64,6 +64,7 @@ function BlogPage() {
                                             <div className='blog_title'> {item.title} </div>
                                         </div>                                        
                                     )}
+                                    return null;
                                 }
                             )
                         )
@@ -89,6 +90,7 @@ function BlogPage() {
                                         </div>
                                         
                                     )}
+                                    return null;
                                 }
                             )
                         )
@@ -111,9 +113,9 @@ function BlogPage() {
                                                 </div>
                                             </div>
                                             <div className='blog_title'> {item.title} </div>
-                                        </div>
-                                        
+                                        </div>                                        
                                     )}
+                                    return null;
                                 }
                             )
                         )
