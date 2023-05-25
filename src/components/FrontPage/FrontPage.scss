@@ -12,13 +12,11 @@
         height: 810px;
         position: absolute;
         transform: translate(557px, -150px);
-        z-index: 1;
     }
 
     .front_body_cont {
         display: flex;
         flex-direction: row;
-        z-index: 5;
         
         .front_left_body {
             width: 800px;

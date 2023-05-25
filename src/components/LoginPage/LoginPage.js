@@ -39,19 +39,7 @@ function LoginPage() {
     const [ password, setPassword ] = useState("");
     const [ loggedIn, setLoggedIn ] = useState(false);
 
-    const [ showPassword, setShowPassword ] = useState(0);
-
-    const handleShowHidePassword = (io) => {
-        switch (io) {
-            case 0:
-                setShowPassword(false);
-                break;
-            case 1:
-                setShowPassword(true);
-                break;
-                default:
-        }
-    }
+    const [ showPassword, setShowPassword ] = useState(false);
 
     const handleLogin = () => {
         credentialsArray.filter((item) => {
@@ -64,10 +52,9 @@ function LoginPage() {
         }) 
     }
 
-    // useEffect(() => {
-    //     handleShowHidePassword();
-    //     handleLogin();
-    // }, []);
+    const showHidePassword = () => {
+        setShowPassword(prev => !prev);
+    }
 
     return (
         <>
@@ -92,6 +79,26 @@ function LoginPage() {
                             <BsFillCheckCircleFill className='login_right_check_icon' />
                             <div className='login_right_feat'> Regular Update </div>
                         </div>
+                        <div className='login_right_ds-feat_cont'>
+                            <BsFillCheckCircleFill className='login_right_check_icon' />
+                            <div className='login_right_feat'> Credentials to use : </div>
+                        </div>
+                        <div className='login_right_ds-feat_cont_cred'>
+                            <div className='login_right_cred'> Email: John Password: one1 </div>
+                        </div>
+                        <div className='login_right_ds-feat_cont_cred'>
+                            <div className='login_right_cred'> Email: Lily Password: two2 </div>
+                        </div>
+                        <div className='login_right_ds-feat_cont_cred'>
+                            <div className='login_right_cred'> Email: Jane Password: three3 </div>
+                        </div>
+                        <div className='login_right_ds-feat_cont_cred'>
+                            <div className='login_right_cred'> Email: Lester Password: four4 </div>
+                        </div>
+                        <div className='login_right_ds-feat_cont_cred'>
+                            <div className='login_right_cred'> Email: Mark Password: five5 </div>
+                        </div>
+
                     </div>                    
                 </div>
                 <div className='login_left_cont'>
@@ -102,19 +109,19 @@ function LoginPage() {
                         </div>
                         <div className='login_left_pw_label'> Password </div>
                         <div className='login_left_pw_cont'>
-                            <input type='password' className='login_left_pw_input' onChange={e => setPassword(e.target.value) } />
-                            {/* <div className='login_left_eye' onClick={() => { showPassword ? setShowPassword(true) : setShowPassword(false) }}> */}
+                            <input type={ showPassword ? 'text' : 'password' } className='login_left_pw_input' onChange={e => setPassword(e.target.value) } />
+                            <div className='login_left_eye' onClick={showHidePassword}>
                                 {
                                     showPassword ? 
-                                    <div className='login_left_eye' onClick={() => { handleShowHidePassword(1) }}>
+                                    <div className='login_left_eye'>
                                         <VscEye className='login_left_eye_btn' />
                                     </div>
                                      :
-                                    <div className='login_left_eye' onClick={() => { handleShowHidePassword(0) }}>
+                                    <div className='login_left_eye'>
                                         <VscEyeClosed className='login_left_eye_btn' />
                                     </div>                                    
                                 }
-                            {/* </div> */}
+                            </div>
                         </div>
                     </div>
                     <div className='login_left_forgot_cont'>
